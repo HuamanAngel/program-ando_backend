@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\NivelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +32,8 @@ Route::group([
     ], function() {
         Route::get('logout', [AuthController::class,'logout']);
         Route::get('user', [AuthController::class,'user']);
+        Route::get('nivel', [NivelController::class,'index']);
+        Route::post('nivel', [NivelController::class,'updateUser']);
+        // Route::post('increment/nivel', [NivelController::class,'addNivel']);
     });
 });
